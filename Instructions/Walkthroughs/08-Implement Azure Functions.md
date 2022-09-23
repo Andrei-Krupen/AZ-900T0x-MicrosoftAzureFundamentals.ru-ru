@@ -1,69 +1,69 @@
 ---
 wts:
-    title: '08 — внедрение Функций Azure (5 мин)'
-    module: 'Модуль 03. Описание основных решений и средств управления'
+  title: "08\_— Реализация функций Azure (5 мин)"
+  module: 'Module 03: Describe core solutions and management tools'
 ---
-# 08 — Реализация функций Azure (5 мин)
+# <a name="08---implement-azure-functions-5-min"></a>08 — Реализация функций Azure (5 мин)
 
 В этом пошаговом руководстве мы создадим приложение-функцию для отображения приветственного сообщения Hello при выполнении HTTP-запроса. 
 
-# Задача 1. Создание приложения-функции 
+# <a name="task-1-create-a-function-app"></a>Задача 1. Создание приложения-функции 
 
 В рамках этой задачи мы создадим приложение-функцию.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. На панели **Поиск** в верхней части портала найдите и выберите элемент **Приложение-функция**, а затем в колонке **Приложение-функция** щелкните **+ Добавить**, **+ Создать**, **+ Новый**.
+2. На панели **Поиск** в верхней части портала найдите и выберите элемент **Приложение-функция**, а затем в колонке **Приложение-функция** щелкните **+ Добавить, + Создать, + Новый**.
 
 3. На вкладке **Основные** в колонке **Приложение-функция** укажите следующие параметры (замените **xxxx** в имени приложения-функции буквами и цифрами, чтобы имя было глобально уникальным, а для остальных параметров оставьте значения по умолчанию). 
 
-    | Параметры | Значение |
+    | Настройки | Значение |
     | -- | --|
     | Подписка | **Сохранить предоставленное по умолчанию** |
-    | Группа ресурсов | **Создание новой группы ресурсов** |
+    | Группа ресурсов | **Создание группы ресурсов** |
     | Имя приложения-функции | **function-xxxx** |
-    | Опубликовать | **Код** |
-    | Стек времени выполнения | **.NET** |
+    | Публикация | **Код** |
+    | Стек среды выполнения | **.NET** |
     | Версия | **3.1** |
     | Регион | **Восточная часть США** |
 
-    **Примечание.** -  Не забудьте заменить символы **xxxx**, чтобы **Имя приложения-функции** стало уникальным.
+    **Примечание.** Не забудьте заменить символы **xxxx**, чтобы **Имя приложения-функции** стало уникальным.
 
 4. Щелкните **Просмотр и создание** и после успешной проверки нажмите кнопку **Создать**, чтобы начать подготовку и развертывание нового приложения-функции Azure.
 
 5. Дождитесь уведомления о создании ресурса.
 
-6. После завершения развертывания щелкните «Перейти к ресурсу» в колонке развертывания. Или же перейдите в колонку **Приложение-функция**, нажмите кнопку **Обновить** и убедитесь, что вновь созданное приложение-функция имеет состояние **Выполняется**. 
+6. When the deployment has completed, click Go to resource from the deployment blade. Alternatively, navigate back to the <bpt id="p1">**</bpt>Function App<ept id="p1">**</ept> blade, click <bpt id="p2">**</bpt>Refresh<ept id="p2">**</ept> and verify that the newly created function app has the <bpt id="p3">**</bpt>Running<ept id="p3">**</ept> status. 
 
-    ![Снимок экрана: страница "Приложение-функция" с новым приложением-функцией.](../images/0701.png)
+    ![Снимок экрана: страница «Приложение-функция» с новым приложением-функцией.](../images/0701.png)
 
-# Задача 2. Создание функции, активируемой HTTP, и тест
+# <a name="task-2-create-a-http-triggered-function-and-test"></a>Задача 2. Создание функции, активируемой HTTP, и тест
 
-В рамках этой задачи мы будем использовать функцию "Веб-перехватчик + API" для отображения сообщения при выполнении HTTP-запроса. 
+В рамках этой задачи мы будем использовать функцию «Веб-перехватчик + API» для отображения сообщения при выполнении HTTP-запроса. 
 
 1. В колонке **Приложение-функция** щелкните созданное приложение-функцию. 
 
-2. В колонке приложения-функции в разделе **Функции** щелкните **Функции**, а затем нажмите кнопку **+ Добавить**, **+ Создать**, **+ Новый**.
+2. В колонке приложения-функции в разделе **Функции** щелкните **Функции**, а затем щелкните **+ Добавить, + Создать, + Новый**.
 
-    ![Снимок экрана: шаг выбора среды разработки в Функциях Azure на панели начала работы с .NET на портале Azure. Выделены отображаемые элементы для создания функции на портале. Выделенными элементами являются развертывание приложения-функции, добавление новой функции, функции на портале и кнопка продолжения.](../images/0702.png)
+    ![Screenshot of the choose a development environment step in the azure functions for dot net getting started pane inside Azure portal. The display elements for creating a new in-portal function are highlighted. The highlighted elements are expand the function app, add new function, in-portal, and the continue button.](../images/0702.png)
 
-3. Справа появится всплывающее окно **Добавить функцию**. В разделе **Выберите шаблон** щелкните **Триггер HTTP**. Нажмите **Добавить**. 
+3. An <bpt id="p1">**</bpt>Add function<ept id="p1">**</ept> pop-up window will appear on the right. In the <bpt id="p1">**</bpt>Select a template<ept id="p1">**</ept> section click <bpt id="p2">**</bpt>HTTP trigger<ept id="p2">**</ept>. Click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> 
 
-    ![Снимок экрана: шаг создания функции в Функциях Azure на панели начала работы с .NET на портале Azure. Карта триггера HTTP выделена, чтобы проиллюстрировать отображение элементов, используемых для добавления нового веб-перехватчика для функции Azure.](../images/0702a.png)
+    ![Screenshot of the create a function step in the azure functions for dot net getting started pane inside Azure portal. The HTTP trigger card is highlighted to illustrate the display elements used to add a new webhook to an Azure function.](../images/0702a.png)
 
 4. В колонке **HttpTrigger1** в разделе **Разработчик** щелкните **Code + Test** (Код и тест). 
 
-5. В колонке **Код и тест** просмотрите автоматически сгенерированный код и обратите внимание на то, что код предназначен для выполнения HTTP-запроса и регистрации информации. Также обратите внимание, что функция возвращает сообщение Hello с именем. 
+5. On the <bpt id="p1">**</bpt>Code + Test<ept id="p1">**</ept> blade, review the auto-generated code and note that the code is designed to run an HTTP request and log information. Also, notice the function returns a Hello message with a name. 
 
-    ![Снимок экрана: код функции. Сообщение Hello выделено.](../images/0704.png)
+    ![Screenshot of the function code. The Hello message is hightlighted.](../images/0704.png)
 
 6. Нажмите кнопку **Получить URL-адрес функции** в верхней части редактора функций. 
 
 7. Задайте в раскрывающемся списке **Клавиша** значение **по умолчанию** и нажмите кнопку **Копировать**, чтобы скопировать URL-адрес функции. 
 
-    ![Снимок экрана: панель "Получить URL-адрес функции" в редакторе функций на портале Azure. Отображаемые элементы — кнопка для получения URL-адреса функции, раскрывающийся список задания клавиши и кнопка копирования URL-адреса — выделены, чтобы указать, как получить и скопировать URL-адрес функции из редактора функций.](../images/0705.png)
+    ![Screenshot of the get function URL pane inside the function editor in Azure portal. The display elements get function URL button, set key dropdown, and copy URL button are highlighted to indicate how to obtain and copy the function URL from the function editor.](../images/0705.png)
 
-8. Откройте в браузере новую вкладку и вставьте скопированный URL-адрес функции в адресную строку. При запросе страницы запускается функция. Обратите внимание на возвращенное сообщение о том, что функции требуется имя в тексте запроса.
+8. Open a new browser tab and paste the copied function URL into your web browser's address bar. When the page is requested the function will run. Notice the returned message stating that the function requires a name in the request body.
 
     ![Снимок экрана: сообщение с просьбой указать имя.](../images/0706.png)
 
@@ -71,12 +71,12 @@ wts:
 
     **Примечание**. Например, если ваше имя Cindy, итоговый URL-адрес будет сходен со следующим: `https://azfuncxxx.azurewebsites.net/api/HttpTrigger1?code=X9xx9999xXXXXX9x9xxxXX==&name=cindy`
 
-    ![Снимок экрана: выделенный URL-адрес функции и добавленное для примера имя пользователя в адресной строке веб-браузера. Приветственное сообщение и имя пользователя также выделяются, чтобы указать выходные данные функции в главном окне браузера.](../images/0707.png)
+    ![Screenshot of a highlighted function URL and an appended example user name in the address bar of a web browser. The hello message and user name are also highlighted to illustrate the output of the function in the main browser window.](../images/0707.png)
 
-10. При нажатии клавиши ВВОД ваша функция будет запускаться с выполнением трассировки каждого вызова. Чтобы просмотреть трассировки, вернитесь на портал **HttpTrigger1 \| Code + Test** (Код и тест) и щелкните **Мониторинг**. Чтобы **настроить** Application Insights, выберите метку времени и нажмите **Выполнить запрос в Application Insights**.
+10. When you hit enter, your function runs and every invocation is traced. To view the traces, return to the Portal <bpt id="p1">**</bpt>HttpTrigger1 <ph id="ph1">\|</ph> Code + Test<ept id="p1">**</ept> blade and click <bpt id="p2">**</bpt>Monitor<ept id="p2">**</ept>. You can <bpt id="p1">**</bpt>configure<ept id="p1">**</ept> Application Insights by selecting the timestamp and click <bpt id="p2">**</bpt>Run query in Application Insights<ept id="p2">**</ept>.
 
     ![Снимок экрана: журнал сведений о трассировке, полученный в результате выполнения функции в редакторе функций на портале Azure.](../images/0709.png) 
 
-Поздравляем! Вы создали приложение-функцию для отображения приветственного сообщения Hello при выполнении HTTP-запроса. 
+Congratulations! You have created a Function App to display a Hello message when there is an HTTP request.  
 
-**Примечание**. Эту группу ресурсов можно при желании удалить во избежание дополнительных затрат. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.

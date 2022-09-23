@@ -1,29 +1,29 @@
 ---
 wts:
-    title: '19 — использование калькулятора цен Azure (10 мин)'
-    module: 'Модуль 06. Описание соглашений об управлении затратами и уровне обслуживания Azure'
+  title: "19\_— Использование калькулятора цен Azure (10 мин.)"
+  module: 'Module 06: Describe Azure cost management and service level agreements'
 ---
-# 19 — Использование калькулятора цен Azure (10 мин)
+# <a name="19---use-the-pricing-calculator-10-min"></a>19 — Использование калькулятора цен Azure (10 мин)
 
 В этом пошаговом руководстве мы воспользуемся калькулятором цен Azure, чтобы оценить стоимость виртуальной машины Azure и связанных сетевых ресурсов.
 
-# Задача 1. Настройка калькулятора цен
+# <a name="task-1-configure-the-pricing-calculator"></a>Задача 1. Настройка калькулятора цен
 
 В рамках этой задачи мы оценим стоимость примера инфраструктуры с помощью калькулятора цен Azure. 
 
-**Примечание**. Чтобы выполнить оценку с помощью калькулятора цен Azure, в этом пошаговом руководстве приведены примеры конфигураций для виртуальной машины и связанных ресурсов. Используйте эти примеры конфигураций или укажите в калькуляторе цен Azure подробную информацию о ваших *фактических* требованиях к ресурсам.
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To create an Azure Pricing Calculator estimate, this walkthrough provides example configurations for the VM and related resources. Use this example configurations or provide the Azure Pricing Calculator with details of your <bpt id="p1">*</bpt>actual<ept id="p1">*</ept> resource requirements instead.
 
-1. В браузере перейдите на веб-страницу [калькулятора цен Azure](https://azure.microsoft.com/ru-ru/pricing/calculator/).
+1. В браузере перейдите на веб-страницу [калькулятора цен Azure](https://azure.microsoft.com/en-us/pricing/calculator/).
 
-2. Чтобы добавить сведения о конфигурации виртуальной машины, щелкните **Virtual Machines** (Виртуальные машины) на вкладке **Products** (Продукты). Прокрутите вниз, чтобы просмотреть сведения о виртуальной машине. 
+2. Чтобы добавить сведения о конфигурации виртуальной машины, щелкните **Виртуальные машины** на вкладке **Продукты**. Прокрутите вниз, чтобы просмотреть сведения о виртуальной машине. 
 
-3. Замените текст **Your Estimate** (Расчетная стоимость для вас) и **Virtual Machines** (Виртуальные машины) более описательными названиями для оценки с помощью калькулятора цен Azure и конфигурации виртуальной машины. В этом пошаговом примере для оценки используется название **My Pricing Calculator Estimate** (Моя оценка калькулятора цен), а для конфигурации виртуальной машины — название **Windows VM** (Виртуальная машина Windows).
+3. Replace <bpt id="p1">**</bpt>Your Estimate<ept id="p1">**</ept> and <bpt id="p2">**</bpt>Virtual Machines<ept id="p2">**</ept> text with more descriptive names for your Azure Pricing Calculator estimate and your VM configuration. This walkthrough example uses <bpt id="p1">**</bpt>My Pricing Calculator Estimate<ept id="p1">**</ept> for the estimate, and <bpt id="p2">**</bpt>Windows VM<ept id="p2">**</ept> for the VM configuration.
 
-   ![Снимок экрана: область конфигурации виртуальной машины на веб-странице оценки с помощью калькулятора цен Azure. Выделение имени оценки и имени конфигурации виртуальной машины указывает, как добавить имя оценки и имя конфигурации виртуальной машины в оценку с помощью калькулятора цен Azure.](../images/1901.png)
+   ![Screenshot of the vm configuration area within the Azure pricing calculator estimate webpage. The highlighted estimate name and vm configuration name indicate how to add an estimate name and a vm configuration name to an Azure pricing calculator estimate.](../images/1901.png)
 
 4. Измените конфигурацию виртуальной машины по умолчанию.
 
-    | Параметры | Значение |
+    | Настройки | Значение |
     | -- | -- |
     | Регион | **Северная Европа** |
     | Операционная система | **Windows** |
@@ -31,71 +31,71 @@ wts:
     | Уровень | **Стандартный** |  
     | Экземпляр | **A2: 2 ядра, 3,5 ГБ ОЗУ, временное хранилище на 135 ГБ** |
 
-   ![Снимок экрана: область конфигурации виртуальной машины на веб-странице оценки с помощью калькулятора цен Azure. Выделенные примеры вводимых пользователем значений свойств конфигурации виртуальной машины показывают, как указать конфигурацию виртуальной машины в оценке с помощью калькулятора цен Azure.](../images/1902.png)
+   ![Screenshot of the vm configuration area within the Azure pricing calculator estimate webpage. The highlighted examples of user inputted vm configuration property values indicate how to specify a vm configuration within an Azure pricing calculator estimate.](../images/1902.png)
 
-    **Примечание**. Цены и спецификации экземпляра виртуальной машины могут отличаться от приведенных в этом примере. Следуйте этому пошаговому руководству, выбрав экземпляр, который максимально соответствует данному примеру. Чтобы просмотреть подробную информацию о различных параметрах продукта виртуальной машины, выберите **Product details** (Сведения о продукте) в меню **More info** (Подробнее) справа.
+    <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The VM instance specifications and pricing may differ from those in this example. Follow this walkthrough by choosing an instance that matches the example as closely as possible. To view details about the different VM product options, choose <bpt id="p1">**</bpt>Product details<ept id="p1">**</ept> from the <bpt id="p2">**</bpt>More info<ept id="p2">**</ept> menu on the right.
 
-5. Установите для параметра **Billing Option** (Вариант оплаты) значение **Pay as you go** (Оплата по мере использования).
+5. Установите для параметра **Оплата** значение **С оплатой по мере использования**.
 
-   ![Снимок экрана: область вариантов оплаты виртуальной машины на веб-странице оценки с помощью калькулятора цен Azure. Выделенный вариант оплаты по мере использования указывает, как указать вариант оплаты для виртуальной машины в оценке с помощью калькулятора цен Azure.](../images/1903.png)
+   ![Screenshot of the vm billing options area within the Azure pricing calculator estimate webpage. The highlighted pay as you go billing option indicates how to specify a billing option for a vm within an Azure pricing calculator estimate.](../images/1903.png)
 
-6. В Azure месяц определяется равным 730 часам. Если ваша виртуальная машина должна быть доступна 100 процентов времени каждый месяц, установите количество часов в месяц равным `730`. В этом примере требуется, чтобы одна виртуальная машина была доступна 50 процентов времени каждый месяц.
+6. **Примечание**. Чтобы выполнить оценку с помощью калькулятора цен Azure, в этом пошаговом руководстве приведены примеры конфигураций для виртуальной машины и связанных ресурсов.
 
     Оставьте количество виртуальных машин равным `1` и измените количество часов в месяц на `365`.
 
-   ![Снимок экрана: область вариантов оплаты виртуальной машины на веб-странице оценки с помощью калькулятора цен Azure. Выделенные параметры количества экземпляров виртуальной машины и часов в месяц показывают, как указать количество экземпляров и часов в месяц для виртуальной машины в оценке с помощью калькулятора цен Azure.](../images/1904.png)
+   ![Используйте эти примеры конфигураций или укажите в калькуляторе цен Azure подробную информацию о ваших *фактических* требованиях к ресурсам.](../images/1904.png)
 
-7. На панели **Managed OS Disks** (Управляемые диски ОС) измените конфигурацию хранилища виртуальной машины по умолчанию.
+7. На панели **Управляемые диски ОС** измените конфигурацию хранилища виртуальной машины по умолчанию.
 
-    | Уровень | Размер диска | Число дисков | Моментальный снимок | Транзакции хранилища |
+    | Уровень | Размер диска | Количество дисков | Снимок | Транзакции с хранилищем |
     | ---- | --------- | --------------- | -------- | -------------------- |
-    | HDD (цен. категория "Стандартный") | S30: 1024 ГиБ | 1 | Отключено | 10 000 |
+    | HDD (цен. категория "Стандартный") | S30: 1024 ГиБ | 1 | Выключено | 10 000 |
 
-   ![Снимок экрана: область параметров управляемых дисков ОС на веб-странице оценки с помощью калькулятора цен Azure. Выделение параметров типа уровня, размера диска, количества дисков и количества транзакций хранилища указывает, как задать конфигурацию хранилища для виртуальной машины в оценке с помощью калькулятора цен Azure.](../images/1905.png)
+   ![Screenshot of the managed OS Disks options area within the Azure pricing calculator estimate webpage. The highlighted tier type, disk size, number of disks, and number of storage transactions, options indicate how to specify a storage configuration for a vm within an Azure pricing calculator estimate.](../images/1905.png)
 
-8. Чтобы добавить пропускную способность сети к своей оценке, перейдите в верхнюю часть веб-страницы калькулятора цен Azure. Щелкните **Networking** (Работа в сети) в меню продукта слева, а затем щелкните плитку **Bandwidth** (Пропускная способность). В диалоговом окне сообщения **Bandwidth added** (Добавлено: Bandwidth) щелкните **View** (Просмотр).
+8. To add networking bandwidth to your estimate, go to the top of the Azure Pricing Calculator webpage. Click <bpt id="p1">**</bpt>Networking<ept id="p1">**</ept> in the product menu on the left, then click the <bpt id="p2">**</bpt>Bandwidth<ept id="p2">**</ept> tile. In the <bpt id="p1">**</bpt>Bandwidth added<ept id="p1">**</ept> message dialog, click <bpt id="p2">**</bpt>View<ept id="p2">**</ept>.
 
-   ![Снимок экрана: область сетевых продуктов на веб-странице калькулятора цен Azure. Выделение плиток работы в сети, добавления пропускной способности и просмотра пропускной способности показывает, как добавлять и просматривать сведения о конфигурации пропускной способности сети в оценке с помощью калькулятора цен Azure.](../images/1906.png)
+   ![Screenshot of the networking products area within the Azure pricing calculator webpage. The highlighted networking, add bandwidth, and view bandwidth, tiles indicate how to add and view details of a networking bandwidth configuration in an Azure pricing calculator estimate.](../images/1906.png)
 
-9. Добавьте имя для конфигурации пропускной способности вашей виртуальной машины. В этом примере используется имя **Bandwidth: Windows VM** (Пропускная способность: виртуальная машина Windows). Измените конфигурацию пропускной способности по умолчанию, добавив следующие сведения.
+9. Замените текст **Ваша оценка** и **Виртуальные машины** более описательными названиями для оценки с помощью калькулятора цен Azure и конфигурации виртуальной машины.
 
-    | Регион | Величина "Передача исходящих данных" для зоны 1 |
+    | Регион | Величина «Передача исходящих данных» для зоны 1 |
     | ------ | -------------------------------------- |
-    | Северная Европа | 50 ГБ |
+    | Северная Европа | 50 ГБ |
 
-   ![Снимок экрана: область конфигурации пропускной способности сети на веб-странице оценки с помощью калькулятора цен Azure. Выделенные примеры вводимых пользователем значений свойств пропускной способности показывают, как указать конфигурацию пропускной способности для виртуальной машины в оценке с помощью калькулятора цен Azure.](../images/1907.png)
+   ![В этом пошаговом примере для оценки используется название **Моя оценка калькулятора цен**, а для конфигурации виртуальной машины — название **ВМ Windows**.](../images/1907.png)
 
-10. Чтобы добавить шлюз приложений, вернитесь в верхнюю часть веб-страницы калькулятора цен Azure. В меню продукта **Networking** (Работа в сети) щелкните плитку **Application Gateway** (Шлюз приложений). В диалоговом окне сообщения **Application Gateway** (Шлюз приложений) щелкните **View** (Просмотр).
+10. To add an Application Gateway, return to the top of the Azure Pricing Calculator webpage. In the <bpt id="p1">**</bpt>Networking<ept id="p1">**</ept> product menu, click the <bpt id="p2">**</bpt>Application Gateway<ept id="p2">**</ept> tile. In the <bpt id="p1">**</bpt>Application Gateway<ept id="p1">**</ept> message dialog, click <bpt id="p2">**</bpt>View<ept id="p2">**</ept>.
 
-    ![Снимок экрана: область сетевых продуктов на веб-странице калькулятора цен Azure. Выделение плиток работы в сети, добавления шлюза приложений и просмотра шлюза приложений показывает, как добавлять и просматривать сведения о конфигурации шлюза приложений в оценке с помощью калькулятора цен Azure.](../images/1908.png)
+    ![Снимок экрана: область конфигурации виртуальной машины на веб-странице оценки с помощью калькулятора цен Azure.](../images/1908.png)
 
-11. Добавьте имя для конфигурации шлюза приложений. В этом примере используется имя **App Gateway: Windows VM** (Пропускная способность: виртуальная машина Windows). Измените конфигурацию шлюза приложений по умолчанию, добавив следующие сведения.
+11. Выделение имени оценки и имени конфигурации виртуальной машины указывает, как добавить имя оценки и имя конфигурации виртуальной машины в оценку с помощью калькулятора цен Azure.
 
-    | Параметры | Значение |
+    | Настройки | Значение |
     | -- | -- |
     | Регион | **Северная Европа** |
-    | Уровень | **Базовый** |
-    | Размер | **Маленький** |
+    | Уровень | **Основной** |
+    | Размер | **Малый** |
     | Экземпляры | **1** |  
-    | Часы | **365** |
-    | Обработанные данные | **50 ГБ** |
-    | Зона 1: Северная Америка, Европа | **50 ГБ**|
+    | Часы | **365**. |
+    | Обработанные данные | **50 ГБ** |
+    | Зона 1: Северная Америка, Европа | **50 ГБ**|
 
     ![Снимок экрана: область конфигурации шлюза приложений на веб-странице оценки с помощью калькулятора цен Azure.](../images/1909.png)
 
 
-# Задача 2. Ознакомление с оценкой цен
+# <a name="task-2-review-the-pricing-estimate"></a>Задача 2. Ознакомление с оценкой цен
 
 В рамках этой задачи мы рассмотрим результаты калькулятора цен Azure. 
 
-1. Прокрутите страницу калькулятора цен Azure вниз до конца, чтобы просмотреть итоговое значение **Estimated monthly cost** (Расчетная месячная стоимость).
+1. Прокрутите страницу калькулятора цен Azure вниз до конца, чтобы просмотреть итоговое значение **Приблизительные месячные затраты**.
 
-    **Примечание**. Изучите различные параметры, доступные в калькуляторе цен Azure. Например, в этом пошаговом руководстве вам требуется изменить валюту на евро.
+    <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Explore the various options available within the Azure Pricing Calculator. For example, this walkthrough requires you to update the currency to Euro.
 
-2. Измените валюту на евро, а затем выберите **Export** (Экспортировать), чтобы скачать копию оценки в формате Microsoft Excel (`.xlsx`) для просмотра в автономном режиме.
+2. Измените валюту на евро, а затем выберите **Экспорт**, чтобы скачать копию оценки в формате Microsoft Excel (`.xlsx`) для просмотра в автономном режиме.
 
-    ![Снимок экрана: итоговая расчетная месячная стоимость на веб-странице оценки с помощью калькулятора цен Azure. Выделенный параметр валюты для евро указывает, как изменить валюту, используемую в оценке с помощью калькулятора цен Azure. Выделенный параметр экспорта показывает, как скачать копию оценки для просмотра в автономном режиме.](../images/1910.png)
+    ![Screenshot of the total estimated monthly costs within the Azure pricing calculator estimate webpage. The highlighted euro currency option indicates how to modify the currency used in an Azure pricing calculator estimate. The highlighted export option illustrates how to download a copy of an estimate for offline viewing.](../images/1910.png)
 
     ![Снимок экрана: пример оценки с помощью калькулятора цен Azure в Microsoft Excel.](../images/1911.png)
 
-Поздравляем! Вы скачали оценку из калькулятора цен Azure.
+Congratulations! You downloaded an estimate from the Azure Pricing Calculator.
