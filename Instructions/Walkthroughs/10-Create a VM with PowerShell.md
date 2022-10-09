@@ -34,7 +34,7 @@ wts:
 
 1. Выберите **PowerShell** в верхнем левом раскрывающемся меню на панели Cloud Shell.
 
-2. Verify your new resource group by running the following command in the Powershell window. Press <bpt id="p1">**</bpt>Enter<ept id="p1">**</ept> to run the command.
+2. Проверьте новую группу ресурсов, запустив следующую команду в окне Powershell. Нажмите клавишу **ВВОД** для запуска команды.
 
     ```PowerShell
     Get-AzResourceGroup | Format-Table
@@ -57,7 +57,7 @@ wts:
 
 5. После создания ВМ закройте панель Cloud Shell сеанса PowerShell.
 
-6. In the Azure portal, search for <bpt id="p1">**</bpt>Virtual machines<ept id="p1">**</ept> and verify the <bpt id="p2">**</bpt>myVMPS<ept id="p2">**</ept> is running. This may take a few minutes.
+6. На портале Azure выполните поиск элемента **Виртуальные машины** и убедитесь, что **myVMPS** выполняется. Это может занять несколько минут.
 
     ![Снимок экрана: страница виртуальных машин с myVMPS в выполняемом состоянии.](../images/1001.png)
 
@@ -71,7 +71,7 @@ wts:
 
 2. Выберите **PowerShell** в верхнем левом раскрывающемся меню на панели Cloud Shell.
 
-3. Retrieve information about your virtual machine including name, resource group, location, and status. Notice the PowerState is <bpt id="p1">**</bpt>running<ept id="p1">**</ept>.
+3. Извлеките информацию о вашей виртуальной машине, включая имя, группу ресурсов, расположение и состояние. Обратите внимание, что состояние питания имеет значение **Выполняется**.
 
     ```PowerShell
     Get-AzVM -name myVMPS -status | Format-Table -autosize
@@ -82,9 +82,9 @@ wts:
     ```PowerShell
     Stop-AzVM -ResourceGroupName myRGPS -Name myVMPS
     ```
-5. When prompted confirm (Yes) to the action. Wait for <bpt id="p1">**</bpt>Succeeded<ept id="p1">**</ept> status.
+5. При появлении запроса подтвердите действие («Да»). Подождите до отображения состояния **Успешно выполнено**.
 
-6. Verify your virtual machine state. The PowerState should now be <bpt id="p1">**</bpt>deallocated<ept id="p1">**</ept>. You can also verify the virtual machine status in the portal. Close Cloudshell.
+6. Проверьте состояние вашей виртуальной машины. Теперь состояние питания должно иметь значение **Освобождено**. Вы также можете проверить состояние виртуальной машины на портале. Закройте Cloudshell.
 
     ```PowerShell
     Get-AzVM -name myVMPS -status | Format-Table -autosize
@@ -98,7 +98,7 @@ wts:
 
 1. В колонке **Все службы** найдите и выберите элемент **Помощник**. 
 
-2. On the <bpt id="p1">**</bpt>Advisor<ept id="p1">**</ept> blade, select <bpt id="p2">**</bpt>Overview<ept id="p2">**</ept>. Notice recommendations are grouped by Reliability, Security, Performance, and Cost. 
+2. В колонке **Помощник** выберите **Обзор**. Рекомендации сгруппированы по категориям "Высокая доступность", "Безопасность", "Производительность" и "Стоимость". 
 
     ![Снимок экрана: страница «Обзор» Помощника. ](../images/1003.png)
 
@@ -114,6 +114,6 @@ wts:
 
 6. Если у вас есть время, продолжайте экспериментировать с Azure PowerShell. 
 
-Congratulations! You have configured Cloud Shell, created a virtual machine using PowerShell, practiced with PowerShell commands, and viewed Advisor recommendations.
+Поздравляем! Вы настроили Cloud Shell, создали виртуальную машину с помощью PowerShell, попрактиковались с командами PowerShell и просмотрели рекомендации Помощника.
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

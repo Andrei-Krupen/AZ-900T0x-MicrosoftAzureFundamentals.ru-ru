@@ -19,16 +19,16 @@ wts:
 
 4. Обратите внимание, что **Область** нашей политики будет распространяться на всю подписку. 
 
-5. Under <bpt id="p1">**</bpt>Basics<ept id="p1">**</ept> Select the <bpt id="p2">**</bpt>Policy definition<ept id="p2">**</ept> ellipsis button (right side of textbox). In the <bpt id="p1">**</bpt>Search<ept id="p1">**</ept> box, enter the value <bpt id="p2">**</bpt>tag<ept id="p2">**</ept>. A list of related Policies with the word <bpt id="p1">**</bpt>tag<ept id="p1">**</ept> will appear. Scroll down till you find the <bpt id="p1">**</bpt>Require a tag and its value on resources<ept id="p1">**</ept> definition, click on it and click <bpt id="p2">**</bpt>Select<ept id="p2">**</ept>.
+5. В разделе **Основные** выберите кнопку с многоточием **Определение политики** (правая сторона текстового поля). В поле **Поиск** введите значение **тег**. Появится список связанных политик со словом **тег**. Прокрутите страницу вниз, пока не найдете определение **Требование тега и его значения в ресурсах**, щелкните его и нажмите **Выбрать**.
 
    ![Изображение](https://user-images.githubusercontent.com/89808319/155607579-d564a43e-a9cd-443d-8482-f47879eff2e9.png)
    
-6.  On the <bpt id="p1">**</bpt>Parameters<ept id="p1">**</ept> tab, type in **Company : Contoso ** for the tag key/value pair name. Click <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept>, and then <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+6.  На вкладке **Параметры** введите **Company : Contoso ** в качестве имени тега пары "ключ-значение". Нажмите кнопку **Просмотр и создание**, а затем кнопку **Создать**.
 
   
 
-7. The <bpt id="p1">**</bpt>Require a tag amd its value on resources<ept id="p1">**</ept> policy assignment is now in place. When a resource is created, it must include a tag with the Company : Contoso key.
-   <bpt id="p1">**</bpt>Note - you need to wait up to 30 minutes for the Policy to be applied.<ept id="p1">**</ept> 
+7. Вы задали назначение политики **Требование тега и его значения в ресурсах**. При создании ресурс должен включать тег с ключом "Company : Contoso".
+   **Примечание. Применение политики может занять до 30 минут.** 
 
   ![Изображение](https://user-images.githubusercontent.com/89808319/155607357-556646b6-9ca7-4817-a02e-643869b2c4dd.png)
 
@@ -38,7 +38,7 @@ wts:
 
 1. На портале Azure в колонке **Все службы** найдите и выберите элемент **Учетные записи хранения**, а затем щелкните **+Добавить +Новый +Создать**.
 
-2. On the <bpt id="p1">**</bpt>Basics<ept id="p1">**</ept> tab of the <bpt id="p2">**</bpt>Create storage account<ept id="p2">**</ept> blade, fill in the following information (replace <bpt id="p3">**</bpt>xxxx<ept id="p3">**</ept> in the name of the storage account with letters and digits such that the name is globally unique). Leave the defaults for everything else.
+2. На вкладке **Основные** в колонке **Создание учетной записи хранения** укажите следующие сведения (замените **xxxx** в имени учетной записи хранения буквами и цифрами, чтобы имя было глобально уникальным). Для остальных параметров оставьте значения по умолчанию.
 
     | Параметр | Значение | 
     | --- | --- |
@@ -49,34 +49,34 @@ wts:
 
 3. Щелкните **Review + create** (Просмотреть и создать). 
 
-    <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are testing to see what happens when the tag is not supplied. Please note, it can take up to 30 minutes for Policies to take effect.
+    **Примечание**. Мы проводим проверку, чтобы узнать, что происходит, когда тег не предоставлен. Обратите внимание, что может понадобиться вплоть до 30 минут, чтобы политики вступила в силу.
 
-4. You will receive a Validation failed message. Click the <bpt id="p1">**</bpt>Click here to view details<ept id="p1">**</ept> message. On the <bpt id="p1">**</bpt>Errors<ept id="p1">**</ept> blade, on the <bpt id="p2">**</bpt>Summary<ept id="p2">**</ept> tab note the error message stating that resource was disallowed by Policy.
+4. Вы получите сообщение об ошибке проверки. Щелкните сообщение **Для просмотра сведений щелкните здесь**. В колонке **Ошибки** на вкладке **Сводка** обратите внимание на сообщение об ошибке, в котором сказано, что ресурс был запрещен политикой.
 
     **Примечание**. Если вы просмотрите вкладку «Необработанная ошибка», то увидите  конкретное имя тега, которое необходимо. 
 
     ![Снимок экрана: ошибка — запрещено политикой.](../images/1704.png)
 
 
-5. Close the <bpt id="p1">**</bpt>Error<ept id="p1">**</ept> pane and click <bpt id="p2">**</bpt>Previous<ept id="p2">**</ept> (bottom of the screen). Provide the tagging information. 
+5. Закройте панель **Ошибка** и нажмите кнопку **Назад** (внизу экрана). Предоставьте информацию о расстановке тегов. 
 
     | Параметр | Значение | 
     | --- | --- |
     | Имя тега | **Company : Contoso** (может отсутствовать в раскрывающемся списке) |
 
-6. Click <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept> and verify that the validation was successful. Click <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to deploy the storage account. 
+6. Нажмите кнопку **Просмотр и создание** и убедитесь, что проверка прошла успешно. Нажмите кнопку **Создать**, чтобы развернуть учетную запись хранения. 
 
 # <a name="task-3-view-all-resources-with-a-specific-tag"></a>Задача 3. Просмотр всех ресурсов с определенным тегом
 
 1. На портале Azure в колонке **Все службы** найдите и выберите элемент **Теги**.
 
-2. Note all tags and their values. Click the <bpt id="p1">**</bpt>Company : Contoso<ept id="p1">**</ept> key/value pair. This will display a blade showing the newly created storage account, as long as you included the tag during its deployment. 
+2. Просмотрите все теги и их значения. Щелкните пару "ключ-значение" **Company : Contoso**. Появится колонка, показывающая только что созданную учетную запись хранения, если вы включили этот тег во время ее развертывания. 
 
    ![Снимок экрана: выбраны теги с Company и Contoso.](../images/1705.png)
 
 3. На портале откройте колонку **Все ресурсы**.
 
-4. Click <bpt id="p1">**</bpt>Add filter<ept id="p1">**</ept> and add the <bpt id="p2">**</bpt>Company<ept id="p2">**</ept> tag key as the filter category. With the filter applied, only your storage account will be listed.
+4. Щелкните **Добавить фильтр** и добавьте ключ тега **Company** в качестве категории фильтра. После применения фильтра в списке будет отображаться только ваша учетная запись хранения.
 
     ![Снимок экрана: фильтр «Все ресурсы» с выбранным тегом Company.](../images/1706.png)
 
@@ -94,7 +94,7 @@ wts:
 
 5. Если у вас есть время, создайте другой ресурс без тега, чтобы убедиться, что политика перестала действовать.
 
-В разделе **Основные** выберите кнопку с многоточием **Определение политики** (правая сторона текстового поля).
+Поздравляем! В этом пошаговом руководстве мы создали назначение политики, которое требовало расстановки тегов, создали ресурс (учетную запись хранения) и проверили политику расстановки тегов, просмотрели ресурсы с указанным тегом, а также удалили политику расстановки тегов.
 
 
-В поле **Поиск** введите значение **тег**.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

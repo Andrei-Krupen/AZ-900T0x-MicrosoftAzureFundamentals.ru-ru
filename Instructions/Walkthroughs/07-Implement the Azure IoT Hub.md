@@ -5,7 +5,7 @@ wts:
 ---
 # <a name="07---implement-an-azure-iot-hub-10-min"></a>07 — Внедрение Центра Интернета вещей Azure (10 мин)
 
-In this walkthrough, we will configure a new Azure IoT Hub in Azure Portal, and then authenticate a connection to an IoT device using the online Raspberry Pi device simulator. Sensor data and messages are passed from the Raspberry Pi simulator to your Azure IoT Hub, and you view metrics for the messaging activity in Azure Portal.
+В этом пошаговом руководстве мы настроим новый Центр Интернета вещей Azure на портале Azure, а затем проверим подлинность подключения к устройству Интернета вещей с помощью онлайн-симулятора устройства Raspberry Pi. Данные датчиков и сообщения передаются из симулятора Raspberry Pi в ваш Центр Интернета вещей Azure, и вы просматриваете метрики по обмену сообщениями на портале Azure.
 
 # <a name="task-1-create-an-iot-hub"></a>Задача 1. Создание центра Интернета вещей 
 
@@ -38,19 +38,19 @@ In this walkthrough, we will configure a new Azure IoT Hub in Azure Portal, and 
 
 В рамках этой задачи мы добавим устройство Интернета вещей в центр Интернета вещей. 
 
-1. When the deployment has completed, click <bpt id="p1">**</bpt>Go to resource<ept id="p1">**</ept> from the deployment blade. Alternatively, from the <bpt id="p1">**</bpt>All services<ept id="p1">**</ept> blade, search for and select <bpt id="p2">**</bpt>IoT Hub<ept id="p2">**</ept> and locate your new IoT Hub instance
+1. После завершения развертывания щелкните **Перейти к ресурсу** в колонке развертывания. Либо в колонке **Все службы** найдите и выберите элемент **Центр Интернета вещей** и найдите свой новый экземпляр Центра Интернета вещей.
 
     ![Снимок экрана: уведомления о выполняемом и успешном развертывании на портале Azure.](../images/0601.png)
 
-2. To add a new IoT device, scroll down to the <bpt id="p1">**</bpt>Device management<ept id="p1">**</ept> section and click <bpt id="p2">**</bpt>Devices<ept id="p2">**</ept>. Then, click <bpt id="p1">**</bpt>+ Add Device<ept id="p1">**</ept>.
+2. Чтобы добавить новое устройство IoT, прокрутите вниз до раздела **Управление устройствами** и щелкните **Устройства**. Затем нажмите кнопку **+ Добавить устройство**.
 
-    ![В этом пошаговом руководстве мы настроим новый Центр Интернета вещей Azure на портале Azure, а затем проверим подлинность подключения к устройству Интернета вещей с помощью онлайн-симулятора устройства Raspberry Pi.](../images/0602.png)
+    ![Снимок экрана: панель устройств Интернета вещей, выделенная в колонке навигации центра Интернета вещей, на портале Azure. Кнопка «Создать» выделена, чтобы показать, как добавить новое удостоверение устройства Интернета вещей в центр Интернета вещей.](../images/0602.png)
 
-3. Данные датчиков и сообщения передаются из симулятора Raspberry Pi в ваш Центр Интернета вещей Azure, и вы просматриваете метрики по обмену сообщениями на портале Azure.
+3. Введите имя для своего нового устройства Интернета вещей — **myRaspberryPi** — и нажмите кнопку **Сохранить**. При этом будет создано удостоверение устройства Интернета вещей в вашем Центре Интернета вещей Azure.
 
 4. Если вы не видите свое новое устройство, нажмите кнопку **Обновить** для обновления страницы "Устройства Интернета вещей". 
 
-5. Select <bpt id="p1">**</bpt>myRaspberryPi<ept id="p1">**</ept> and copy the <bpt id="p2">**</bpt>Primary Connection String<ept id="p2">**</ept> value. You will use this key in the next task to authenticate a connection to the Raspberry Pi simulator.
+5. Выберите **myRaspberryPi** и скопируйте значение **Основная строка подключения**. Вы будете использовать этот ключ в следующей задаче для проверки подлинности подключения к симулятору Raspberry Pi.
 
     ![Снимок экрана: страница «Основная строка подключения» с выделенным значком копирования.](../images/0603.png)
 
@@ -58,25 +58,25 @@ In this walkthrough, we will configure a new Azure IoT Hub in Azure Portal, and 
 
 В рамках этой задачи мы протестируем устройство с помощью симулятора Raspberry Pi. 
 
-1. Open a new tab in the web browser and type this shortcut link <ph id="ph1">https://aka.ms/RaspPi</ph>. It will take you to a Raspberry Pi Simulator site. If you have time, read about the Raspberry Pi simulator. When done select "<bpt id="p1">**</bpt>X<ept id="p1">**</ept>" to close the pop-up window.
+1. Откройте в веб-браузере новую вкладку и введите эту ссылку на ярлык https://aka.ms/RaspPi. Она позволит вам перейти на веб-сайт симулятора Raspberry Pi. Если у вас есть время, почитайте сведения о симуляторе Raspberry Pi. Когда закончите, выберите "**X**", чтобы закрыть всплывающее окно.
 
-2. In the code area on the right side, locate the line with 'const connectionString ='. Replace it with the connection string you copied from the Azure portal. Note that the connection sting includes the DeviceId (<bpt id="p1">**</bpt>myRaspberryPi<ept id="p1">**</ept>) and SharedAccessKey entries.
+2. В области кода справа найдите строку с "const connectionString =". Замените ее строкой подключения, скопированной на портале Azure. Обратите внимание, что строка подключения включает в себя записи DeviceId (**myRaspberryPi**) и SharedAccessKey.
 
     ![Снимок экрана: область написания кода в симуляторе Raspberry Pi.](../images/0604.png)
 
-3. Click <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> (below the code area) to run the application. The console output should show the sensor data and messages that are sent from the Raspberry Pi simulator to your Azure IoT Hub. Data and messages are sent each time the Raspberry Pi simulator LED flashes. 
+3. Щелкните **Выполнить** (под областью кода), чтобы запустить приложение. В выходных данных консоли должны отображаться данные датчиков и сообщения, отправляемые симулятором Raspberry Pi в ваш Центр Интернета вещей Azure. Данные и сообщения отправляются каждый раз, когда мигает светодиод симулятора Raspberry Pi. 
 
-    ![Screenshot of the Raspberry Pi simulator console.  The console output shows sensor data and messages sent from the Raspberry Pi simulator to Azure IoT Hub.](../images/0605.png)
+    ![Снимок экрана: консоль симулятора Raspberry Pi.  В выходных данных консоли отображаются данные датчиков и сообщения, отправляемые симулятором Raspberry Pi в ваш Центр Интернета вещей Azure.](../images/0605.png)
 
 5. Нажмите кнопку **Остановить**, чтобы прекратить отправку данных.
 
 6. Вернитесь на портал Azure.
 
-7. Switch the IoT Hub <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> blade and scroll down to the <bpt id="p2">**</bpt>IoT Hub Usage<ept id="p2">**</ept> information to view usage. Change your timeframe in the <bpt id="p1">**</bpt>show data for last<ept id="p1">**</ept> to see data in the last hour.
+7. Переключитесь на колонку **Обзор** Центра Интернета вещей и прокрутите вниз до пункта с информацией **Использование Центра Интернета вещей**, чтобы ознакомиться с порядком его использования. Измените свой временной интервал в поле **отображения последних данных**, чтобы просмотреть данные за последний час.
 
     ![Снимок экрана: метрики в области использования Центра Интернета вещей на портале Azure.](../images/0606.png)
 
 
-Congratulations! You have set up Azure IoT Hub to collect sensor data from an IoT device.
+Поздравляем! Вы настроили Центр Интернета вещей Azure для сбора данных датчиков с устройства Интернета вещей.
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

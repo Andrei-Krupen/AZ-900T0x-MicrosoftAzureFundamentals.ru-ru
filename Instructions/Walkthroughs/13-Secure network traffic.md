@@ -43,15 +43,15 @@ wts:
 
 6. Для остальных параметров оставьте значения по умолчанию и нажмите кнопку **Просмотр и создание** в нижней части страницы.
 
-7. Once Validation is passed click the <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> button. It can take about five minutes to deploy the virtual machine.
+7. После прохождения проверки нажмите кнопку **Создать**. Развертывание виртуальной машины может занять около пяти минут.
 
-8. Monitor the deployment. It may take a few minutes for the resource group and virtual machine to be created. 
+8. мониторинг развертывания. Создание группы ресурсов и виртуальной машины может занять несколько минут. 
 
 9. В колонке развертывания или области уведомлений щелкните **Перейти к ресурсу**. 
 
 10. В колонке виртуальной машины **SimpleWinVM** щелкните **Сеть**, просмотрите вкладку **Правила входящего порта** и обратите внимание на то, что нет группы безопасности сети, связанной с сетевым интерфейсом виртуальной машины или подсетью, к которой подключен сетевой интерфейс.
 
-    <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Identify the name of the network interface. You will need it in the next task.
+    **Примечание**. Определите имя сетевого интерфейса. Оно понадобится вам в следующей задаче.
 
 # <a name="task-2-create-a-network-security-group"></a>Задача 2. Создание группы безопасности сети
 
@@ -84,14 +84,14 @@ wts:
 
 2. На панели **Обзор** щелкните **Подключить**.
 
-3. Attempt to connect to the virtual machine by selecting RDP and downloading an running the RDP file. By default the network security group does not allow RDP. Close the error window. 
+3. Попытайтесь подключиться к виртуальной машине, выбрав RDP, загрузив RDP-файл и запустив его. По умолчанию группа безопасности сети не разрешает использовать RDP. Закройте окно ошибки. 
 
 
     ![Снимок экрана: сообщение об ошибке, указывающее, что подключение к виртуальной машине завершилось сбоем.](../images/1201.png)
 
 4. В колонке виртуальной машины прокрутите вниз до раздела **Параметры**, щелкните **Сеть** и обратите внимание, что правила для входящего трафика для группы безопасности сети **myNSGSecure (подключено к сетевому интерфейсу: myVMNic)** запрещают весь входящий трафик, кроме трафика в виртуальной сети и проб подсистемы балансировки нагрузки.
 
-5. On the <bpt id="p1">**</bpt>Inbound port rules<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add inbound port rule<ept id="p2">**</ept> . Click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> when you are done. 
+5. На вкладке **Правила входящего порта** щелкните **Добавить правило входящего порта**. По завершении нажмите кнопку **Добавить**. 
 
     | Параметр | Значение |
     | -- | -- |
@@ -104,7 +104,7 @@ wts:
     | Приоритет | **300** |
     | Название | **AllowRDP** |
 
-6. Select <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> and wait for the rule to be provisioned and then try again to RDP into the virtual machine by going back to <bpt id="p2">**</bpt>Connect<ept id="p2">**</ept> This time you should be successful. Remember the user is <bpt id="p1">**</bpt>azureuser<ept id="p1">**</ept> and the password is <bpt id="p2">**</bpt>Pa$$w0rd1234<ept id="p2">**</ept>.
+6. Выберите **Добавить** и подождите, пока не будет предоставлено правило, а затем снова попытайтесь воспользоваться RDP для подключения к виртуальной машине, вернувшись к элементу **Подключить**. На этот раз данная процедура должна пройти успешно. Помните, что используются имя пользователя **azureuser** и пароль **Pa$$w0rd1234**.
 
 # <a name="task-4-configure-an-outbound-security-port-rule-to-deny-internet-access"></a>Задача 4. Настройка правила исходящего порта безопасности для запрета доступа в Интернет
 
@@ -114,7 +114,7 @@ wts:
 
 2. После запуска компьютера откройте браузер **Internet Explorer**. 
 
-3. Verify that you can access <bpt id="p1">**</bpt><ph id="ph1">https://www.bing.com</ph><ept id="p1">**</ept> and then close Internet Explorer. You will need to work through the IE enhanced security pop-ups. 
+3. Убедитесь, что у вас есть доступ к адресу **https://www.bing.com** , а затем закройте Internet Explorer. Вам потребуется пройти через всплывающие окна системы усиленной безопасности Internet Explorer. 
 
     **Примечание**. Теперь мы настроим правило для запрета исходящего доступа в Интернет. 
 
@@ -122,9 +122,9 @@ wts:
 
 5. В разделе **Параметры** щелкните **Сеть** и затем **Правила исходящего порта**.
 
-6. Notice there is a rule, <bpt id="p1">**</bpt>AllowInternetOutbound<ept id="p1">**</ept>. This a default rule and cannot be removed. 
+6. Обратите внимание на правило **AllowInternetOutbound**. Оно используется по умолчанию, и его невозможно удалить. 
 
-7. Click <bpt id="p1">**</bpt>Add outbound port rule<ept id="p1">**</ept> to the right of the <bpt id="p2">**</bpt>myNSGSecure  (attached to network interface: myVMNic)<ept id="p2">**</ept> network security group and configure a new outbound security rule with a higher priority that will deny internet traffic. Click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> when you are finished. 
+7. Щелкните **Добавить правило исходящего порта** справа от группы безопасности сети **myNSGSecure (подключено к сетевому интерфейсу: myVMNic)** и настройте новое правило безопасности для исходящего трафика с более высоким приоритетом, которое запретит интернет-трафик. По завершении нажмите кнопку **Добавить**. 
 
     | Параметр | Значение |
     | -- | -- |
@@ -140,6 +140,6 @@ wts:
 
 8. Щелкните **Добавить**. Вернитесь на виртуальную машину, для которой использовался RDP. 
 
-9. Browse to <bpt id="p1">**</bpt><ph id="ph1">https://www.microsoft.com</ph><ept id="p1">**</ept>. The page should not display. You may need to work through additional IE enhanced security pop-ups.  
+9. Перейдите по ссылке **https://www.microsoft.com** . Страница не должна отображаться. Возможно, вам потребуется пройти через дополнительные всплывающие окна системы усиленной безопасности Internet Explorer.  
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

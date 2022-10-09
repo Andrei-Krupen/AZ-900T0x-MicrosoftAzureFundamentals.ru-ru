@@ -27,7 +27,7 @@ wts:
     | Регион | **Восточная часть США (США)** |
     
    
-4. Click the <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept> button. Ensure the validation passes. Then hit create to deploy the resource.
+4. Нажмите кнопку **Проверка и создание**. Убедитесь, что проверка выполняется успешно. Затем нажмите «Создать», чтобы развернуть ресурс.
 
 
 # <a name="task-2-create-two-virtual-machines"></a>Задача 2. Создание двух виртуальных машин
@@ -51,13 +51,13 @@ wts:
    | Выбранные входящие порты| **RDP (3389)** |
    
 
-3. Select the <bpt id="p1">**</bpt>Networking<ept id="p1">**</ept> tab. Make sure the virtual machine is placed in the <bpt id="p2">**</bpt>vnet1<ept id="p2">**</ept> virtual network. Review the default settings, but do not make any other changes. 
+3. Перейдите на вкладку **Сеть**. Убедитесь, что виртуальная машина находится в виртуальной сети **vnet1**. Просмотрите параметры по умолчанию, но не вносите никакие другие изменения. 
 
-4. Click <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept>. After the Validation passes, click <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>. Deployment times can vary but it can generally take between three to six minutes to deploy.
+4. Щелкните **Review + create** (Просмотреть и создать). После выполнения проверки щелкните **Создать**. Время развертывания может различаться, однако обычно оно составляет от трех до шести минут.
 
 5. Следя за развертыванием, перейдите к следующему шагу. 
 
-6. Create a second virtual machine by repeating steps <bpt id="p1">**</bpt>2 to 4<ept id="p1">**</ept> above. Make sure you use a different virtual machine name, that the virtual machine is in the same virtual network, and is using a new public IP address:
+6. Создайте вторую виртуальную машину, повторив шаги **с 2 по 4**, приведенные выше. Убедитесь, что для виртуальной машины используется другое имя, а сама виртуальная машина находится в той же виртуальной сети и использует новый общедоступный IP-адрес:
 
     | Параметр | Значение |
     | --- | --- |
@@ -70,9 +70,9 @@ wts:
 
 # <a name="task-3-test-the-connection"></a>Задача 3. Тестирование подключения 
 
-In this task, we will try to test whether the virtual machines can communicate (ping) each other. If not we will install a rule to allow an ICMP connection. Usually ICMP connections are automatically blocked.
+В этой задаче мы попытаемся проверить, что виртуальные машины могут взаимодействовать друг с другом (с помощью проверки связи). Если нет, то мы установим правило, разрешающее подключение ICMP. Обычно подключения ICMP автоматически блокируются.
 
-1. From the <bpt id="p1">**</bpt>All resources<ept id="p1">**</ept> blade, search for <bpt id="p2">**</bpt>vm1<ept id="p2">**</ept>, open its <bpt id="p3">**</bpt>Overview<ept id="p3">**</ept> blade, and make sure its <bpt id="p4">**</bpt>Status<ept id="p4">**</ept> is <bpt id="p5">**</bpt>Running<ept id="p5">**</ept>. You may need to <bpt id="p1">**</bpt>Refresh<ept id="p1">**</ept> the page.
+1. В колонке **Все ресурсы** найдите виртуальную машину **vm1**, откройте ее колонку **Обзор** и убедитесь, что параметр **Состояние** имеет значение **Выполняется**. Может потребоваться **обновить** страницу.
 
 2. В колонке **Обзор** выберите **Подключить**, а затем выберите **RDP** в раскрывающемся списке.
 
@@ -84,7 +84,7 @@ In this task, we will try to test whether the virtual machines can communicate (
 
 5. В окне **Безопасность Windows** введите имя пользователя **azureuser** и пароль **Pa$$w0rd1234**, а затем нажмите кнопку **ОК**.
 
-6. You may receive a certificate warning during the sign-in process. Click <bpt id="p1">**</bpt>Yes<ept id="p1">**</ept> to create the connection and connect to your deployed VM. You should connect successfully. Close the Windows Server and Dashboard windows that pop up. You should see a Blue Windows background. You are now in your virtual machine.
+6. При входе в систему может появиться предупреждение о сертификате. Нажмите кнопку **Да**, чтобы создать подключение и подключиться к развернутой виртуальной машине. Подключение должно пройти успешно. Закройте всплывающие окна Windows Server и панели мониторинга. Вы должны увидеть синий фон Windows. Сейчас вы находитесь в своей виртуальной машине.
 
 7. На **обеих** созданных виртуальных машинах подключитесь по протоколу RDP и отключите общедоступный и частный брандмауэр, открыв меню "Пуск" > "Параметры" > "Сеть и Интернет" и найдя брандмауэр Windows.
 
@@ -96,9 +96,9 @@ In this task, we will try to test whether the virtual machines can communicate (
    ping vm2
    ```
 
- 10. You should be successful. You have pinged VM2 from VM1.
+ 10. Ваше действие должно выполниться успешно. Вы проверили связь с виртуальной машиной VM2 с VM1.
 
 
-<bpt id="p1">**</bpt>Congratulations!<ept id="p1">**</ept> You have configured and deployed two virtual machines in a virtual network, and then you were able to connect them.
+**Поздравляем!** Вы настроили и выполнили развертывание двух виртуальных машин в виртуальной сети, а затем смогли их подключить.
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

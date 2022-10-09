@@ -13,7 +13,7 @@ wts:
 
 2. В колонке **Все службы** найдите и выберите элемент **Хранилища ключей**, а затем выберите **+ Добавить + Новый + Создать**.
 
-3. Configure the key vault (replace <bpt id="p1">**</bpt>xxxx<ept id="p1">**</ept> in the name of the key vault with letters and digits such that the name is globally unique). Leave the defaults for everything else.
+3. Настройте хранилище ключей (замените **xxxx** в имени хранилища ключей буквами и цифрами так, чтобы имя было глобально уникальным). Для остальных параметров оставьте значения по умолчанию.
 
     | Параметр | Значение | 
     | --- | --- |
@@ -26,13 +26,13 @@ wts:
     **Примечание.** Замените **xxxx**, чтобы найти уникальное имя.
 4. Нажмите кнопку **Просмотр и создание**, а затем кнопку **Создать**. 
 
-5. Once the new key vault is provisioned, click <bpt id="p1">**</bpt>Go to resource<ept id="p1">**</ept>. Or you can locate your new key vault by searching for it. 
+5. После подготовки нового хранилища ключей щелкните **Перейти к ресурсу**. Либо вы можете найти новое хранилище ключей, выполнив поиск. 
 
-6. Click on the key vault <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> tab and take note of the <bpt id="p2">**</bpt>Vault URI<ept id="p2">**</ept>. Applications that use your vault through the REST APIs will need this URI.
+6. Щелкните вкладку **Обзор** хранилища ключей и обратите внимание на **URI-адрес хранилища**. Приложениям, которые используют ваше хранилище через REST API, потребуется этот URI.
 
-7. Take a moment to browse through some of the other key vault options. Under <bpt id="p1">**</bpt>Settings<ept id="p1">**</ept> review <bpt id="p2">**</bpt>Keys<ept id="p2">**</ept>, <bpt id="p3">**</bpt>Secrets<ept id="p3">**</ept>, <bpt id="p4">**</bpt>Certificates<ept id="p4">**</ept>, <bpt id="p5">**</bpt>Access Policies<ept id="p5">**</ept>, <bpt id="p6">**</bpt>Firewalls and virtual networks<ept id="p6">**</ept>.
+7. Уделите время изучению некоторых других параметров хранилища ключей. В разделе **Параметры** просмотрите **Ключи**, **Секреты**, **Сертификаты**, **Политики доступа**, **Брандмауэры и виртуальные сети**.
 
-    <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Your Azure account is the only one authorized to perform operations on this new vault. You can modify this if you wish in the <bpt id="p1">**</bpt>Settings<ept id="p1">**</ept> and then the <bpt id="p2">**</bpt>Access policies<ept id="p2">**</ept> section.
+    **Примечание**. Выполнять операции в этом новом хранилище имеет право только ваша учетная запись Azure. При необходимости это можно изменить, перейдя в раздел **Параметры** и затем в раздел **Политики доступа**.
 
 # <a name="task-2-add-a-secret-to-the-key-vault"></a>Задача 2. Добавление секрета в хранилище ключей
         
@@ -40,7 +40,7 @@ wts:
 
 1. В разделе **Параметры** выберите **Секреты**, а затем щелкните **+ Создать или импортировать**.
 
-2. Configure the secret. Leave the other values at their defaults. Notice you can set an activation and expiration date. Notice you can also disable the secret.
+2. Настройте секрет. Для остальных параметров оставьте значения по умолчанию. Обратите внимание, что вы можете задать дату активации и дату окончания срока действия. Обратите внимание, что вы также можете отключить секрет.
 
     | Параметр | Значение | 
     | --- | --- |
@@ -52,11 +52,11 @@ wts:
 
 4. После успешного создания секрета щелкните элемент **ExamplePassword** и обратите внимание, что он имеет состояние **Включено**.
 
-5. Select the secret you just created, note the the <bpt id="p1">**</bpt>Secret Identifier<ept id="p1">**</ept>. This is the url value that you can now use with applications. It provides a centrally managed and securely stored password. 
+5. Выберите только что созданный вами секрет и обратите внимание на **Идентификатор секрета**. Это значение URL-адреса, которое теперь можно использовать с приложениями. Оно предоставляет централизованно управляемый и безопасно хранимый пароль. 
 
 6. Нажмите кнопку **Показать значение секрета**, чтобы отобразить пароль, который вы указали ранее.
 
 
-Настройте хранилище ключей (замените **xxxx** в имени хранилища ключей буквами и цифрами так, чтобы имя было глобально уникальным).
+Поздравляем! Вы создали хранилище ключей Azure, а затем создали в нем секрет пароля, получив безопасно хранимый и централизованно управляемый пароль для использования с приложениями.
 
-Для остальных параметров оставьте значения по умолчанию.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

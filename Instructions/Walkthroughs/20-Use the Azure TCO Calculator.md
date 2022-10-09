@@ -8,7 +8,7 @@ wts:
 
 В этом пошаговом руководстве вы воспользуетесь калькулятором совокупной стоимости владения для создания отчета о сравнении затрат для локальной среды.
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This walkthrough provides example definitions of on-premises infrastructure and workloads for a typical datacenter. To create a TCO Calculator report, use the example definitions or provide details of your <bpt id="p1">*</bpt>actual<ept id="p1">*</ept> on-premises infrastructure and workloads.
+**Примечание**. В этом пошаговом руководстве представлены примеры определений локальной инфраструктуры и рабочих нагрузок для типичного центра обработки данных. Чтобы создать отчет калькулятора совокупной стоимости владения, используйте эти примеры определений или предоставьте подробную информацию о ваших *фактических* рабочих нагрузках и локальной инфраструктуре.
 
 # <a name="task-1-configure-the-tco-calculator"></a>Задача 1. Настройка калькулятора совокупной стоимости владения
 
@@ -88,6 +88,6 @@ wts:
 
 3. Чтобы сохранить или распечатать копию отчета в формате PDF, нажмите кнопку **Скачать**.
 
-    ![Screenshot of the report pane of the tco calculator in Azure. The highlighted and completed input fields indicates how set the tco calculator timeframe to three years and the region to north europe. A graph shows the cost of on-premises infrastructure and workloads off-set against the reduced cost of using Azure.](../images/2001.png)
+    ![Снимок экрана: панель отчетов калькулятора совокупной стоимости владения в Azure. Выделенные и заполненные поля ввода показывают, как установить для калькулятора совокупной стоимости владения временной интервал в три года и регион «Северная Европа». График показывает стоимость локальной инфраструктуры и рабочих нагрузок в сравнении со сниженной стоимостью использования Azure.](../images/2001.png)
 
-Congratulations! You have used the TCO Calculator to generate a cost comparison report for an on-premises environment.
+Поздравляем! Вы воспользовались калькулятором совокупной стоимости владения для создания отчета о сравнении затрат для локальной среды.

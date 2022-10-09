@@ -57,22 +57,22 @@ wts:
 
     ![Снимок экрана: вкладка «Сети» в колонке «Дополнительные параметры» с параметрами, выбранными в соответствии с таблицей, и выделенной кнопкой «Просмотр и создание».](../images/0501c.png)
 
-7. Click <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept> and then click <bpt id="p2">**</bpt>Create<ept id="p2">**</ept> to deploy and provision the resource group, server, and database. It can take approx. 2 to 5 minutes to deploy.
+7. Щелкните **Просмотр и создание** и затем **Создать**, чтобы развернуть и подготовить группу ресурсов, сервер и базу данных. Развертывание может занять примерно 2–5 минут.
 
 
 # <a name="task-2-test-the-database"></a>Задача 2. Тестирование базы данных.
 
 В этой задаче мы настроим SQL Server и выполним SQL-запрос. 
 
-1. When the deployment has completed, click Go to resource from the deployment blade. Alternatively, from the <bpt id="p1">**</bpt>All Resources<ept id="p1">**</ept> blade, search and select <bpt id="p2">**</bpt>Databases<ept id="p2">**</ept>, then <bpt id="p3">**</bpt>SQL databases<ept id="p3">**</ept> ensure your new database was created. You may need to <bpt id="p1">**</bpt>Refresh<ept id="p1">**</ept> the page.
+1. После завершения развертывания щелкните «Перейти к ресурсу» в колонке развертывания. Или же в колонке **Все ресурсы** найдите и выберите элемент **Базы данных**, затем элемент **Базы данных SQL** и убедитесь, что новая база данных создана. Может потребоваться **обновить** страницу.
 
     ![Снимок экрана: только что развернутые база данных и сервер SQL.](../images/0502.png)
 
-2. Click the <bpt id="p1">**</bpt>db1<ept id="p1">**</ept> entry representing the SQL database you created. On the db1 blade click <bpt id="p1">**</bpt>Query editor (preview)<ept id="p1">**</ept>.
+2. Щелкните запись **db1**, представляющую созданную вами базу данных SQL. В колонке db1 blade щелкните **Редактор запросов (предварительная версия)** .
 
 3. Войдите в систему как **sqluser** с паролем **Pa$$w0rd1234**.
 
-4. You will not be able to login. Read the error closely and make note of the IP address that needs to be allowed through the firewall. 
+4. Вы не сможете выполнить вход. Внимательно прочитайте ошибку и запишите IP-адрес, который должен быть разрешен в брандмауэре. 
 
     ![Снимок экрана: страница входа в редактор запросов с ошибкой IP-адреса.](../images/0503.png)
 
@@ -82,13 +82,13 @@ wts:
 
 6. В колонке db1 **Обзор** щелкните элемент **Настройка брандмауэра для сервера**, расположенный в центре верхней области экрана обзора.
 
-7. Click <bpt id="p1">**</bpt>+ Add client IP<ept id="p1">**</ept> (top menu bar) to add the IP address referenced in the error. (it may have autofilled for you - if not paste it into the IP address fields). Be sure to <bpt id="p1">**</bpt>Save<ept id="p1">**</ept> your changes. 
+7. Щелкните **+ Добавить IP-адрес клиента** (верхняя строка меню), чтобы добавить IP-адрес, упомянутый в ошибке. (Он может быть уже автоматически вставлен — если нет, вставьте его в поля IP-адреса). Не забудьте **Сохранить** изменения. 
 
     ![Снимок экрана: страница параметров брандмауэра SQL Server с выделенным новым правилом IP-адресов.](../images/0506.png)
 
-8. Return to your SQL database (slide the bottom toggle bar to the left) and click on <bpt id="p1">**</bpt>Query Editor (Preview)<ept id="p1">**</ept>. Try to login again as <bpt id="p1">**</bpt>sqluser<ept id="p1">**</ept> with the password <bpt id="p2">**</bpt>Pa$$w0rd1234<ept id="p2">**</ept>. This time you should succeed. Note that it may take a couple of minutes for the new firewall rule to be deployed. 
+8. Вернитесь в свою базу данных SQL (сдвиньте нижнюю панель переключателя влево) и щелкните **Редактор запросов (предварительная версия)** . Еще раз попробуйте войти в систему как **sqluser** с паролем **Pa$$w0rd1234**. На этот раз все должно получиться. Обратите внимание, что для развертывания нового правила брандмауэра может потребоваться несколько минут. 
 
-9. Once you log in successfully, the query pane appears. Enter the following query into the editor pane. 
+9. После успешного входа появится панель запросов. Введите в панели редактора приведенный ниже запрос. 
 
     ```SQL
     SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
@@ -99,10 +99,10 @@ wts:
 
     ![Снимок экрана: редактор запросов с панелью запросов и командами, которые успешно выполняются.](../images/0507.png)
 
-10. Click <bpt id="p1">**</bpt>Run<ept id="p1">**</ept>, and then review the query results in the <bpt id="p2">**</bpt>Results<ept id="p2">**</ept> pane. The query should run successfully.
+10. Щелкните **Запустить**, а затем просмотрите результаты запроса в области **Результаты**. Запрос должен выполниться успешно.
 
     ![Снимок экрана: панель редактора запросов базы данных с кодом SQL, который был успешно выполнен, и выходными данными на панели результатов.](../images/0508.png)
 
-Congratulations! You have created a SQL database in Azure and successfully queried the data in that database.
+Поздравляем! Вы создали базу данных SQL в Azure и успешно запросили данные в этой базе данных.
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.

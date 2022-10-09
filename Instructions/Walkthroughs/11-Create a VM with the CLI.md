@@ -19,7 +19,7 @@ wts:
    
 3. В диалоговом окне приветствия Azure Cloud Shell при выводе приглашения выбрать **Bash** либо **PowerShell** выберите **Bash**. 
 
-4. A new window will open stating <bpt id="p1">**</bpt>You have no storage mounted<ept id="p1">**</ept>. Select <bpt id="p1">**</bpt>advanced settings<ept id="p1">**</ept>.
+4. Откроется новое окно с сообщением **У вас нет подключенного хранилища**. Выберите **дополнительные параметры**.
 
 5. На экране дополнительных параметров заполните следующие поля, а затем щелкните «Создать группу»:
     - Группа ресурсов: **Создание новой группы ресурсов**
@@ -42,7 +42,7 @@ wts:
     az group list --output table
     ```
 
-4. In Cloud Shell enter the command below and make sure that each line, except for the last one, is followed by the backslash (<ph id="ph1">`\`</ph>) character. If you type the whole command on the same line, do not use any backslash characters. 
+4. Введите в Cloud Shell приведенную ниже команду и убедитесь, что после каждой строки, кроме последней, стоит символ обратной косой черты ("`\`"). Если вы вводите всю команду на одной строке, не используйте символы обратной косой черты. 
 
     ```cli
     az vm create \
@@ -56,7 +56,7 @@ wts:
 
     >**Примечание**. Если вы используете командную строку на компьютере с Windows, замените обратную косую черту ("`\`") символом крышки ("`^`").
 
-    <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The command will take 2 to 3 minutes to complete. The command will create a virtual machine and various resources associated with it such as storage, networking and security resources. Do not continue to the next step until the virtual machine deployment is complete. 
+    **Примечание**. Выполнение команды займет от 2 до 3 минут. Команда создаст виртуальную машину и различные связанные с ней ресурсы, такие как ресурсы хранилища, сети и безопасности. Не переходите к следующему шагу, пока развертывание виртуальной машины не будет завершено. 
 
 5. Когда команда завершит выполнение, закройте панель Cloud Shell в окне браузера.
 
@@ -73,19 +73,19 @@ wts:
 
 2. Выберите **Bash** в верхнем левом раскрывающемся меню на панели Cloud Shell.
 
-3. Retrieve information about the virtual machine you provisioned, including name, resource group, location, and status. Notice the PowerState is <bpt id="p1">**</bpt>running<ept id="p1">**</ept>.
+3. Извлеките информацию о подготовленной вами виртуальной машине, включая имя, группу ресурсов, расположение и состояние. Обратите внимание, что состояние питания имеет значение **Выполняется**.
 
     ```cli
     az vm show --resource-group myRGCLI --name myVMCLI --show-details --output table 
     ```
 
-4. Stop the virtual machine. Notice the message that billing continues until the virtual machine is deallocated. 
+4. Остановите виртуальную машину. Обратите внимание на сообщение о том, что выставление счетов продолжается до тех пор, пока виртуальная машина не будет освобождена. 
 
     ```cli
     az vm stop --resource-group myRGCLI --name myVMCLI
     ```
 
-5. Verify your virtual machine status. The PowerState should now be <bpt id="p1">**</bpt>stopped<ept id="p1">**</ept>.
+5. Проверьте состояние вашей виртуальной машины. Теперь состояние питания должно иметь значение **Остановлено**.
 
     ```cli
     az vm show --resource-group myRGCLI --name myVMCLI --show-details --output table 
@@ -99,7 +99,7 @@ wts:
 
 1. В колонке **Все службы** найдите и выберите элемент **Помощник**. 
 
-2. On the <bpt id="p1">**</bpt>Advisor<ept id="p1">**</ept> blade, select <bpt id="p2">**</bpt>Overview<ept id="p2">**</ept>. Notice recommendations are grouped by Reliability, Security, Performance, and Cost. 
+2. В колонке **Помощник** выберите **Обзор**. Рекомендации сгруппированы по категориям "Высокая доступность", "Безопасность", "Производительность" и "Стоимость". 
 
     ![Снимок экрана: страница «Обзор» Помощника. ](../images/1103.png)
 
@@ -115,6 +115,6 @@ wts:
 
 6. Если у вас есть время, продолжайте экспериментировать с Azure CLI. 
 
-Congratulations! You have configured Cloud Shell, created a virtual machine using Azure CLI, practiced with Azure CLI commands, and viewed Advisor recommendations.
+Поздравляем! Вы настроили Cloud Shell, создали виртуальную машину с помощью Azure CLI, попрактиковались с командами Azure CLI и просмотрели рекомендации Помощника.
 
-<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: To avoid additional costs, you can optionally remove this resource group. Search for resource groups, click your resource group, and then click <bpt id="p1">**</bpt>Delete resource group<ept id="p1">**</ept>. Verify the name of the resource group and then click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>. Monitor the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> to see how the delete is proceeding.
+**Примечание**. Во избежание дополнительных затрат, эту группу ресурсов можно удалить. Выполните поиск по группам ресурсов, выберите свою группу и щелкните **Удалить группу ресурсов**. Проверьте имя группы ресурсов и выберите **Удалить**. Следите за областью **Уведомления** для отслеживания процесса удаления.
